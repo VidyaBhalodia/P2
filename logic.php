@@ -5,6 +5,10 @@
 	/* print_r($dictionaryFile); */ 
 	?>
 
+<?php print_r($_POST); ?> <br>	
+<?php $paramters = $_POST; ?>
+<?php echo $paramters['numberWords']; ?>
+	
 <?php // generate password - default of 4 words, no spaces
 function makePassword($numberWords, $addInteger) {
 	global $dictionaryFile;
@@ -14,11 +18,11 @@ function makePassword($numberWords, $addInteger) {
 		$passwd = $passwd."-".$dictionaryFile[rand(0, $dictionarySize)];
 		}
 		
-	if ($addInteger == 1) {
+	if ($addInteger == "Yes") {
 		$passwd = $passwd.'-'.rand(0, 100);
 		}
 	echo $passwd;
 	}
 	?>
 
-<?php makePassword(4, 1); ?>
+	<?php makePassword($paramters['numberWords'], $paramters['addNumber']); ?>
