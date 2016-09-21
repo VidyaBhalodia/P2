@@ -1,4 +1,9 @@
-<?php // load file containing a dictionary of the english language 
+<?php
+error_reporting(E_ALL);       # Report Errors, Warnings, and Notices
+ini_set('display_errors', 1); # Display errors on page (instead of a log file)
+?>
+
+<?php // load file containing a dictionary of the most common words as determined via google searches.  
 	$dictionaryFile = file('https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english.txt', FILE_IGNORE_NEW_LINES);
 	$dictionarySize = count($dictionaryFile);
 	/* echo $dictionaryFile[rand(0, $dictionarySize)];
@@ -7,9 +12,14 @@
 
 	
 <?php // save the post content as a new variable. 
-$paramters = $_POST; ?>
+$paramters = $_POST; 
+?>
 
-<?php 
+
+<?php  if (is_numeric($paramters['numberWords']) == FALSE) {
+	$error = "Please Enter Valid Number of Words";
+	return;
+}
 ?>
 
 	
@@ -40,9 +50,3 @@ function makePassword($numberWords, $separator, $numberSpecCharacters, $addInteg
 	echo $passwd;
 	}
 	?>
-
-	<?php makePassword($paramters['numberWords'],$paramters['separator'], $paramters['numberSpecCharacters'], $paramters['addNumber']); ?>
-
-<form method='POST' action='index.php'>
-    <input type='submit' value='That was fun, I want to do it again !' /><br>
-</form>

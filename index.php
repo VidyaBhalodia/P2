@@ -1,5 +1,9 @@
 <html>
 <head>
+<?php
+error_reporting(E_ALL);       # Report Errors, Warnings, and Notices
+ini_set('display_errors', 1); # Display errors on page (instead of a log file)
+?>
 <title> Problem 2 </title>
 
 </head>
@@ -9,7 +13,7 @@
 <h1> Problem 2 - XKCD Password Generator </h1>
 
 
-<form method='POST' action='logic.php'>
+<form method='POST' action='password.php'>
     <b> Enter your parameters here : </b> <br>
     Number of words : <input type='number' name='numberWords' value = 4 min = 1 max = 9 /> (Max 9 Words) <br>
     Choose a separator character  : <input type="radio" name="separator" value="" checked="checked" /> None 
