@@ -10,16 +10,37 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 	/* print_r($dictionaryFile); */ 
 	?>
 
-	
 <?php // save the post content as a new variable. 
 $paramters = $_POST; 
 ?>
 
-
 <?php  if (is_numeric($paramters['numberWords']) == FALSE) {
-	$error = "Please Enter Valid Number of Words";
-	return;
-}
+		echo $parameters['numberWords'];
+		echo "Error - Invalid Number of Words. Reverting to Default of 4 Words";
+		$paramters['numberWords'] = 4;
+		}
+	elseif ($paramters['numberWords'] > 9) {
+		echo "Error - Maximum Number of Allowed Words is 9. Setting Number of Words to 9"; 
+		$paramters['numberWords'] = 9;
+		}
+	elseif ($paramters['numberWords'] < 1) {
+		echo "Error - Minimum Number of Words Needed is 1. Setting Number of Words to 1" ;
+		$paramters['numberWords'] = 1;	
+	}
+?>
+
+<?php  if (is_numeric($paramters['numberSpecCharacters']) == FALSE) {
+		echo "Error - Invalid Number of Special Characters. Reverting to Default of 0 Special Characters";
+		$paramters['numberSpecCharacters'] = 0;
+		}
+	elseif ($paramters['numberSpecCharacters'] > 9) {
+		echo "Error - Maximum Number of Special Characters Words is 9. Setting Number of Special Characters to 9"; 
+		$paramters['numberSpecCharacters'] = 9;
+		}
+	elseif ($paramters['numberSpecCharacters'] < 0) {
+		echo "Error - Minimum Number of Special Characters is 0. Setting Number of Special Characters to 0" ;
+		$paramters['numberSpecCharacters'] = 0;
+	}
 ?>
 
 	

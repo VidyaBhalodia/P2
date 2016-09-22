@@ -19,7 +19,7 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
     Choose a separator character  : <input type="radio" name="separator" value="" checked="checked" /> None 
 		<input type="radio" name="separator" value="-" /> - Hyphen   
 		<input type="radio" name="separator" value="_" /> _ Underscore <br>     
-    Number of Special Characters : <input type='number' name='numberSpecCharacters' value = 0 min = 0 max = 9 /> (Max 9 Characters) <br>
+    Number of Special Characters : <input type='text' name='numberSpecCharacters' value = 0 min = 0 max = 9 /> (Max 9 Characters) <br>
 <!-- apparently, I need the hidden checkbox or my function complains that I won't send it the right value -->
 	<input type='hidden' value='0' name='addNumber'> 	
 	<input type="checkbox" name='addNumber' value="Yes" /> Add Numbers <br>
