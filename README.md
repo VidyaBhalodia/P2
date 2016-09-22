@@ -13,7 +13,7 @@ It gives you the option of adding a random integer between 0-100 to the end of y
 Once you hit submit, the password phrase shows up on a new page, along with a button that allows you to return to the generator page.
 
 ## Demo 
-
+https://www.youtube.com/watch?v=b1OrW6R60z4
 
 ## Details for teaching team
 
