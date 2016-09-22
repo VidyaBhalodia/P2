@@ -1,4 +1,4 @@
-# Vidya Bhalodia Portfolio Page - Project 1
+# Vidya Bhalodia Portfolio Page - Project 2
 ## 
 Live URL
 <http://p2.vidyabhalodia.me>
