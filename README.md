@@ -5,10 +5,12 @@ Live URL
 
 ## Description
 This is my xkcd password generator.
-It allows you to pick between 1-9 words for your password phrase.
-It allows you pick from 3 possible separators (none, underscore, hyphen)
-It allows you to select from 1-9 randomly selected special characters
-It gives you the option of adding a random integer between 0-100 to the end of your password phrase.
+It allows you to pick between 1-9 words for your password phrase - default 4.
+It allows you pick from 3 possible separators (none, underscore, hyphen) - default none.
+It allows you to select from 0-9 randomly selected special characters - default 0.
+It gives you the option of adding a random integer between 0-100 to the end of your password phrase. - default no.
+### Validation : Client-side and Server-side validation is performed to ensure appropriate values for the number of words and the number of special characters. 
+If an invalid value is sent to the server, an appropriate error message will be displayed - and the value will be set to an acceptable one. Then the password will be created based on the correct values. 
 
 Once you hit submit, the password phrase shows up on a new page, along with a button that allows you to return to the generator page.
 
