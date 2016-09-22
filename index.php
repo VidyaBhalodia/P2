@@ -1,32 +1,32 @@
 <html>
 <head>
-<?php
-error_reporting(E_ALL);       # Report Errors, Warnings, and Notices
-ini_set('display_errors', 1); # Display errors on page (instead of a log file)
-?>
-<title> Problem 2 </title>
-
+	<title> Problem 2 </title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<h1> Problem 2 - XKCD Password Generator </h1>
+<h1>XKCD Password Generator </h1>
 
+<a href = "https://xkcd.com/936/"><img src = "https://imgs.xkcd.com/comics/password_strength.png" width=33%></a>
 
-<form method='POST' action='password.php'>
-    <b> Enter your parameters here : </b> <br>
-    Number of words : <input type='number' name='numberWords' value = 4 min = 1 max = 9 /> (Max 9 Words) <br>
-    Choose a separator character  : <input type="radio" name="separator" value="" checked="checked" /> None 
-		<input type="radio" name="separator" value="-" /> - Hyphen   
-		<input type="radio" name="separator" value="_" /> _ Underscore <br>     
-    Number of Special Characters : <input type='text' name='numberSpecCharacters' value = 0 min = 0 max = 9 /> (Max 9 Characters) <br>
+<table>
+<tr><td>
+<form method='POST' action='password.php' class = 'myform'>
+    <h2> Enter your parameters here : </h2> <br>
+    <label>Number of words : </label><input type='number' name='numberWords' value = 4 min = 1 max = 9 /> <label>(Max 9 Words)</label> <br>
+    <label>Choose a separator character  : </label><input type="radio" name="separator" value="" checked="checked" /> <label>None </label>
+		<input type="radio" name="separator" value="-" /> <label>- Hyphen  </label> 
+		<input type="radio" name="separator" value="_" /> <label>_ Underscore </label><br>     
+    <label>Number of Special Characters : </label><input type='number' name='numberSpecCharacters' value = 0 min = 0 max = 9 /> <label>(Max 9 Characters)</label>( <br>
 <!-- apparently, I need the hidden checkbox or my function complains that I won't send it the right value -->
 	<input type='hidden' value='0' name='addNumber'> 	
-	<input type="checkbox" name='addNumber' value="Yes" /> Add Numbers <br>
+	<input type="checkbox" name='addNumber' value="Yes" /> <label>Add Numbers </label><br>
+	<br>
     <input type='submit' value='Create a password' /><br>
 </form>
-
-
+</td></tr>
+</table>
 
 
 

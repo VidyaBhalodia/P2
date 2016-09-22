@@ -1,8 +1,3 @@
-<?php
-error_reporting(E_ALL);       # Report Errors, Warnings, and Notices
-ini_set('display_errors', 1); # Display errors on page (instead of a log file)
-?>
-
 <?php // load file containing a dictionary of the most common words as determined via google searches.  
 	$dictionaryFile = file('https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english.txt', FILE_IGNORE_NEW_LINES);
 	$dictionarySize = count($dictionaryFile);
@@ -14,7 +9,9 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 $paramters = $_POST; 
 ?>
 
-<?php  if (is_numeric($paramters['numberWords']) == FALSE) {
+
+<?php  // validation for number of words. instead of quitting the password generation, I'll reset them to reasonable values
+	if (is_numeric($paramters['numberWords']) == FALSE) {
 		echo $parameters['numberWords'];
 		echo "Error - Invalid Number of Words. Reverting to Default of 4 Words";
 		$paramters['numberWords'] = 4;
@@ -29,7 +26,8 @@ $paramters = $_POST;
 	}
 ?>
 
-<?php  if (is_numeric($paramters['numberSpecCharacters']) == FALSE) {
+<?php // validation for number of special characters. instead of quitting the password generation, I'll reset them to reasonable values  	
+	if (is_numeric($paramters['numberSpecCharacters']) == FALSE) {
 		echo "Error - Invalid Number of Special Characters. Reverting to Default of 0 Special Characters";
 		$paramters['numberSpecCharacters'] = 0;
 		}
